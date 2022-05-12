@@ -1,0 +1,1 @@
+<h3>Your otp is {{$details['otp']}}</h3>
