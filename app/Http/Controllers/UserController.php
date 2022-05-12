@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\sendEmail;
-use App\Http\Requests\ConfirmOtpRequest;
+use App\Http\Requests\sendEmail;//send email request validations
+use App\Http\Requests\ConfirmOtpRequest;//confirm otp request validations
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Session as FacadesSession;
 use App\Jobs\SendOtpJob;

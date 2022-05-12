@@ -21,13 +21,7 @@
 
                             <div class="col-md-6">
                                 <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email">
-                                 <p id = "errorFront" style = "font-size: 14px; font-weight: bold; color: red;margin-top:5px;"> 
-    </p> 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                 <p id = "errorFront" style = "font-size: 14px; font-weight: bold; color: red;margin-top:5px;"> </p> 
                             </div>
                         </div>
                         <div class="row mb-0">
@@ -46,6 +40,7 @@
 </div>
 <script>
 		function runValidity() {
+            //Javascript validation
             var errorNote = document.getElementById('errorFront');
 		    var email =  document.getElementById('email').value;
 			// Regular Expression (Not accepts second @ symbol
