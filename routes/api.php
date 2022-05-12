@@ -15,9 +15,8 @@ use App\Http\Controllers\Api\AuthController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
 Route::controller(AuthController::class)->group(function(){
-    Route::post('/login','login')->name('api.login');
+    Route::post('/send-otp','sendOtp')->name('api.sendotp');
+    Route::post('/login','login')->name('api.login')->middleware('attempts');//attemps middleware check login attempts.Defined in app\Http\Middelware\CheckExceededAttempts.middleware named $routeMiddleware in app\Http\Kernel.php
 });

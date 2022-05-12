@@ -23,6 +23,12 @@ class checkExceededAttempts
             {
                 return $next($request);
             }
+            updateOtp($request->email);//otp sets to '0';
+            updateAttempt($request->email);//otp_attempts set to null
+            if( $request->is('api/*'))//request is from api.it returns error message 
+            {
+                return response()->json(['success'=>false,'message' => 'Error!Confirmation failed.You exceeded maximum login attempts']);
+            }
          return to_route('email.otp.view')->with('error','Confirmation failed.You exceeded maximum login attempts.Try again!!');//if login_attempts=3  and entered otp is wrong or validation errors redirects to send-otp interface
         }
          return $next($request);//if everything goes right,then logged in

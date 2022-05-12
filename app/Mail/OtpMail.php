@@ -28,6 +28,6 @@ class OtpMail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.otpMail',['details'=>$this->details]);
+        return $this->view('emails.otpMail',['details'=>$this->details]);// html formatted otp view
     }
 }

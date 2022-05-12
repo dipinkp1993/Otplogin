@@ -49,8 +49,8 @@ class UserController extends Controller
       if($user)
       {
         Auth::login($user,true);//if user exists,login success
-        updateOtp($request->email);//otp sets to '000000;
-        updateAttempt($request->email);
+        updateOtp($request->email);//otp sets to '0';
+        updateAttempt($request->email);//otp_attempts set to null
         session()->forget('email');//seesion deleted
         return to_route('home')->with('success','Sucessfully logged in');//redirect to successful page,home page.
       }

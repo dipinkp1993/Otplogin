@@ -8,11 +8,9 @@
                 <div class="card-header bg-default">{{ __('Send OTP') }}</div>
 
                 <div class="card-body">
-                    @if(Session::has('success'))
-                         <p class="alert alert-success">{{ Session::get('success') }}</p>
-                    @endif
+                  
                     @if(Session::has('error'))
-                         <p class="alert alert-danger">{{ Session::get('error') }}</p>
+                         <p class="alert alert-danger alert-dismissible"> <button type="button" class="close" data-dismiss="alert">&times;</button>{{ Session::get('error') }}</p>
                     @endif
                     <form method="POST" action="{{ route('email.otp.send') }}" 
                     id="emailOtpForm">
